@@ -11,3 +11,24 @@ driver_path = ChromeDriverManager().install()
 service = Service(driver_path)
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
+
+# Amazon logo
+driver.find_element(By.CSS_SELECTOR,'.a-icon')
+# Create account
+driver.find_element(By.CSS_SELECTOR,'.a-spacing-small')
+# Your name field
+driver.find_element(By.CSS_SELECTOR,'#ap_customer_name')
+# Mobile number or email field
+driver.find_element(By.CSS_SELECTOR,'#ap_email')
+# Password field
+driver.find_element(By.CSS_SELECTOR,'#ap_password')
+# Re-enter password field
+driver.find_element(By.CSS_SELECTOR,'#ap_password_check')
+# Continue button
+driver.find_element(By.CSS_SELECTOR,'#continue')
+# Conditions of Use
+driver.find_element(By.CSS_SELECTOR,"#legalTextRow [href*='condition']")
+# Privacy Notice
+driver.find_element(By.CSS_SELECTOR,"#legalTextRow [href*='privacy']")
+# Sign in
+driver.find_element(By.CSS_SELECTOR,".a-link-emphasis")
