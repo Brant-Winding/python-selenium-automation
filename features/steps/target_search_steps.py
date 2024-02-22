@@ -8,15 +8,15 @@ def open_target_main(context):
     context.driver.get("https://www.target.com/")
 
 
-@when('Search for coffee')
-def search_product(context):
-    context.driver.find_element(By.ID, 'search').send_keys('coffee')
+@when('Search for {product}')
+def search_product(context, product):
+    context.driver.find_element(By.ID, 'search').send_keys(product)
     context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
     sleep(6)
 
 
-@then('Search results for coffee is shown')
-def verify_search_results_correct(context):
+@then('Search results for {expected_result} is shown')
+def verify_search_results_correct(context, expected_result):
     actual_test = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
-    assert 'coffee' in actual_test, f'Expected word coffee not in {actual_test}'
+    assert expected_result in actual_test, f'Expected word {expected_result} not in {actual_test}'
     print('Test case passed')

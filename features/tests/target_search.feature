@@ -5,3 +5,15 @@ Feature: target.com search tests
     Given Open Target main page
     When Search for coffee
     Then Search results for coffee is shown
+
+
+  Scenario: user can search for product on target
+    Given Open Target main page
+    When Search for mug
+    Then Search results for mug is shown
+
+
+  Scenario: user can search for product on target
+    Given Open Target main page
+    When Search for dog food
+    Then Search results for dog food is shown
