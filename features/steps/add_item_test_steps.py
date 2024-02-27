@@ -21,11 +21,9 @@ def click_add_to_side_nav(context):
     context.driver.find_element(*SIDE_NAV_CART_BTN).click()
 
 
-
 @when('Open Cart page')
 def open_cart_page(context):
     context.driver.get("https://www.target.com/cart")
-
 
 
 @then('Verify cart has {amount} item(s)')

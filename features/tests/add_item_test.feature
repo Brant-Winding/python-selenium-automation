@@ -1,4 +1,4 @@
-# Created by brand at 2/22/2024
+# Created by brand at 2/26/2024
 Feature: Adding item to cart check
 
   Scenario: User can add item to cart
