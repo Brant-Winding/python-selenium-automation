@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-
 def browser_init(context):
     """
     :param context: Behave context
@@ -18,6 +17,7 @@ def browser_init(context):
     context.driver.maximize_window()
 
     context.wait = WebDriverWait(context.driver,10)
+
 
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
