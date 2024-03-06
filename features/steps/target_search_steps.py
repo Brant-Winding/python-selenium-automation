@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
+
 SEARCH_FIELD = (By.ID, 'search')
 SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 SEARCH_RESULT_HEADER = (By.XPATH, "//div[@data-test='resultsHeading']")
@@ -9,7 +10,6 @@ SEARCH_RESULT_HEADER = (By.XPATH, "//div[@data-test='resultsHeading']")
 
 @given('Open Target main page')
 def open_target_main(context):
-    # context.driver.get("https://www.target.com/")
     context.app.main_page.open_main()
 
 

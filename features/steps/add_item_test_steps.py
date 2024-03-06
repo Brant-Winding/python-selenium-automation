@@ -12,25 +12,21 @@ CART_SUMMARY = (By.CSS_SELECTOR, "[class*='CartSummarySpan']")
 
 @when('Click Add to cart')
 def click_add_to_cart(context):
-    context.driver.find_element(*ADD_TO_CART_BTN).click()
+    context.app.search_results_page.click_add_to_cart()
 
 
 @when('Click Add to cart from side nav')
 def click_add_to_side_nav(context):
     context.wait.until(EC.visibility_of_element_located(SIDE_NAV_CART_BTN))
-    context.driver.find_element(*SIDE_NAV_CART_BTN).click()
+    context.app.side_nav_page.click_add_to_side_nav()
 
 
 @when('Open Cart page')
 def open_cart_page(context):
-    context.driver.get("https://www.target.com/cart")
+    context.app.cart.open_cart_page()
 
 
 @then('Verify cart has {amount} item(s)')
 def verify_cart_items(context, amount):
     context.wait.until(EC.visibility_of_element_located(CART_SUMMARY))
-    cart_summary = context.driver.find_element(*CART_SUMMARY).text
-    assert amount in cart_summary, f"Expected {amount} items but got {cart_summary}"
-
-
-
+    context.app.cart.verify_cart_items(amount)
