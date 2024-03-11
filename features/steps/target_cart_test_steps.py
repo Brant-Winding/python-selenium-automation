@@ -15,4 +15,3 @@ def click_cart_icon(context):
 @then("Verify 'Your cart is empty' message is shown")
 def verify_cart_empty_message(context):
     context.app.cart.verify_cart_empty_message()
-

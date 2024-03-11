@@ -5,6 +5,7 @@ from pages.header import Header
 from pages.search_results_page import SearchResultsPage
 from pages.side_nav_page import SideNavPage
 from pages.sign_in_page import SignInPage
+from pages.circle_page import CirclePage
 
 
 class Application:
@@ -17,3 +18,4 @@ class Application:
         self.search_results_page = SearchResultsPage(driver)
         self.sign_in_page = SignInPage(driver)
         self.side_nav_page = SideNavPage(driver)
+        self.circle_page = CirclePage(driver)

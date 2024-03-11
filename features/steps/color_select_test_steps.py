@@ -26,5 +26,4 @@ def click_and_verify_colors(context):
         actual_colors.append(selected_color)
         print(actual_colors)
 
-
     assert expected_colors == actual_colors, f'Expected {expected_colors} did not match actual {actual_colors}'

@@ -21,4 +21,4 @@ class Header(Page):
 
     def click_sign_in(self):
         self.click(*self.SIGN_IN_BTN)
-        
+        sleep(2)
